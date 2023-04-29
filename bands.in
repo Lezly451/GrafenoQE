@@ -1,0 +1,5 @@
+&BANDS
+prefix="Graphene"
+outdir="."
+filband="Graphene-bands.dat"
+/

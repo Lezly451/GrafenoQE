@@ -1,0 +1,43 @@
+&control
+	calculation = 'nscf',
+	restart_mode = 'from_scratch',
+	verbosity= 'low',
+	pseudo_dir = '/q-e-qe-6.3/pseudo',
+   	outdir = './' ,
+	prefix = 'Graphene'
+/
+
+&system
+	ibrav = 0,
+	a = 2.4594, !<- Definirlo así permite que esté en Angstroms.
+	nat = 2, 
+	ntyp = 1, 
+	ecutwfc = 40, !<- Viene en pseudopotencial.
+	nbnd = 12,
+	occupations ='tetrahedra'
+
+/
+
+&electrons
+	diagonalization='david'
+    	mixing_mode = 'plain'
+ 	mixing_beta = 0.7
+	conv_thr =  1.0d-8
+/
+
+ATOMIC_SPECIES
+C 12.011 C.pbe-n-rrkjus_psl.1.0.0.UPF
+
+CELL_PARAMETERS {alat}
+   0.868052621   0.501240346   0.000000000
+   0.868052621  -0.501240346   0.000000000
+   0.000000000   0.000000000   4.066030000
+
+ATOMIC_POSITIONS {alat}
+C 0.00000 0.00000 0.00000 0 0 0 
+C 0.578760771 0.00000 0.00000
+
+!Aquí se dividieron las componentes de los vectores entre el parámetro de red (alat).
+
+K_POINTS {automatic}
+12 12 12 0 0 0

@@ -1,0 +1,7 @@
+&DOS
+   outdir='./',
+   prefix='Graphene',
+   fildos='Graphene.dos',
+   Emin=-20,
+   Emax=20,
+/
